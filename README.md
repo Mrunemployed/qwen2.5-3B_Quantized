@@ -70,3 +70,12 @@ You can enforce this with a strict system prompt and JSON-only output instructio
 - If the container fails on startup, verify the model file path and name.
 - If performance is slow, reduce context length or thread settings.
 - If you see memory errors, remove `--mlock`.
+
+## Setting up
+The `Qwen2.5-3B-Instruct` model needs to be downloaded and kept under `models` for the docker service to attach it to the service, use the following command to save it under models:
+```
+mkdir -p models/qwen2.5-3b
+cd models/qwen2.5-3b
+wget -O Qwen2.5-3B-Instruct-Q4_K_M.gguf \
+https://huggingface.co/bartowski/Qwen2.5-3B-Instruct-GGUF/resolve/main/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+```
