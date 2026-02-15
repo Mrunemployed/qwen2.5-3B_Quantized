@@ -1,6 +1,6 @@
 services:
   qwen_scoring:
-    image: ghcr.io/ggerganov/llama.cpp:server
+    image: ghcr.io/ggml-org/llama.cpp:server
     container_name: qwen_scoring
     restart: unless-stopped
 
