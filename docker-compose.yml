@@ -29,8 +29,10 @@ services:
       - "8"
       - "--threads-batch"
       - "8"
-      - "-b 512"
-      - "-c 4096"
+      - "-b"
+      - "512"
+      - "-c" 
+      - "4096"
       # CPU-only
       - "--n-gpu-layers"
       - "0"
