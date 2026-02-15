@@ -1,0 +1,38 @@
+services:
+  qwen_scoring:
+    image: ghcr.io/ggerganov/llama.cpp:server
+    container_name: qwen_scoring
+    restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - ./models:/models:ro
+
+    command:
+      - "-m"
+      - "/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf"
+
+      # Context length (8192 if you want; 4096 is faster/lower RAM)
+      - "-c"
+      - "8192"
+
+      # Bind + port
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "8080"
+
+      # CPU threading (you have 8 CPUs online: 0-7)
+      - "--threads"
+      - "8"
+      - "--threads-batch"
+      - "8"
+
+      # CPU-only
+      - "--n-gpu-layers"
+      - "0"
+
+      # Optional: lock model in RAM to reduce paging jitter (remove if it errors)
+      - "--mlock"
