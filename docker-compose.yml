@@ -39,12 +39,12 @@ services:
       - "--mlock"
 
   labels:
-        - traefik.enable=true
-        - traefik.http.routers.qwen.rule=Host(`qwen.helioaero.com`)
-        - traefik.http.routers.qwen.entrypoints=websecure
-        - traefik.http.routers.qwen.tls=true
-        - traefik.http.routers.qwen.tls.certresolver=le
-        - traefik.http.services.qwen.loadbalancer.server.port=8002
+    - traefik.enable=true
+    - traefik.http.routers.qwen.rule=Host(`qwen.helioaero.com`)
+    - traefik.http.routers.qwen.entrypoints=websecure
+    - traefik.http.routers.qwen.tls=true
+    - traefik.http.routers.qwen.tls.certresolver=le
+    - traefik.http.services.qwen.loadbalancer.server.port=8002
   networks:
     - traefik_proxy
 networks:
