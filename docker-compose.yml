@@ -38,7 +38,7 @@ services:
       - "0"
 
       # Optional: lock model in RAM to reduce paging jitter (remove if it errors)
-      - "--mlock"
+      # - "--mlock"
 
     labels:
       - traefik.enable=true
