@@ -22,7 +22,7 @@ services:
       - "--host"
       - "0.0.0.0"
       - "--port"
-      - "8080"
+      - "8002"
 
       # CPU threading (you have 8 CPUs online: 0-7)
       - "--threads"
